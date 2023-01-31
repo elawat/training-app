@@ -7,7 +7,7 @@ import { BannerComponent } from './core/banner/banner.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+<p>{{(book$ | async)?.title ?? 'book not found'}}</p>
+
+<h1>{{booksService.txt}}</h1>
+
+
+<!-- <div *ngIf="book$ | async as book; else loading">
+  <p>{{book.title}}</p>
+</div>
+
+<ng-template #loading>
+  <p>Loading book...</p>
+</ng-template> -->

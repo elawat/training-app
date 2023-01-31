@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let book of booksService.books">
+    <!-- <a href="list/details/{{book.id}}">{{book.title}}</a> -->
+    <a routerLink="details/{{book.id}}">{{book.title}}</a>
+  </li>
+</ul>
+
+
+<p>Book list: {{booksService.txt}}</p>
+<app-banner>
+
