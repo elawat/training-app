@@ -34,12 +34,12 @@ const routesForStandalone: Route[] = [
       ),
   },
 ];
-// platformBrowserDynamic().bootstrapModule(AppModule)
-//   .catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
 
-bootstrapApplication(AppStandaloneComponent, {
-  providers: [
-    provideRouter(routesForStandalone),
-    importProvidersFrom(BrowserAnimationsModule)
-],
-});
+// bootstrapApplication(AppStandaloneComponent, {
+//   providers: [
+//     provideRouter(routesForStandalone),
+//     importProvidersFrom(BrowserAnimationsModule)
+// ],
+// });

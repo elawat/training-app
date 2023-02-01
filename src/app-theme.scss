@@ -1,0 +1,111 @@
+// include common styles for angular material - do it only once in the app
+@use "@angular/material" as mat;
+@include mat.core();
+
+$app-primary-palette: (
+  50: #ecf2f8,
+  100: #d0deef,
+  200: #b1c8e4,
+  300: #91b1d9,
+  400: #7aa1d0,
+  500: #6290c8,
+  600: #5a88c2,
+  700: #507dbb,
+  800: #4673b4,
+  900: #3461a7,
+  A100: #f1f6ff,
+  A200: #bed6ff,
+  A400: #8bb6ff,
+  A700: #71a6ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$app-secondary-palette: (
+  50: #e7e4e5,
+  100: #c3bbbf,
+  200: #9c8e95,
+  300: #74616a,
+  400: #563f4a,
+  500: #381d2a,
+  600: #321a25,
+  700: #2b151f,
+  800: #241119,
+  900: #170a0f,
+  A100: #ff5990,
+  A200: #ff266e,
+  A400: #f20051,
+  A700: #d90048,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$app-primary: mat.define-palette($app-primary-palette, 500);
+$app-accent: mat.define-palette($app-secondary-palette);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$app-warn: mat.define-palette(mat.$red-palette);
+
+$app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $app-primary,
+      accent: $app-accent,
+      warn: $app-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+// @include mat.sidenav-theme($app-theme);
+// @include mat.toolbar-theme($app-theme);
+// @include mat.button-theme($app-theme);
+
+@include mat.all-component-themes($app-theme);
+
+.dark-theme {
+  $app-dark-primary: mat.define-palette(mat.$indigo-palette, 500);
+  $app-dark-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+  $app-dark-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $app-dark-primary,
+        accent: $app-dark-accent,
+      ),
+      typography: mat.define-typography-config(),
+      density: 0,
+    )
+  );
+
+  @include mat.all-component-themes($app-dark-theme);
+}
