@@ -8,6 +8,7 @@ import { AppModule } from './app/app.module';
 import { BookListComponent } from './app/core/book-list/book-list.component';
 import { BookViewComponent } from './app/core/components/book-view/book-view.component';
 import { BooksService } from './app/core/services/books.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routesForStandalone: Route[] = [
   { path: '', pathMatch: 'full', redirectTo: 'list' },
@@ -39,6 +40,6 @@ const routesForStandalone: Route[] = [
 bootstrapApplication(AppStandaloneComponent, {
   providers: [
     provideRouter(routesForStandalone),
-    //importProvidersFrom(AppModule),
-  ],
+    importProvidersFrom(BrowserAnimationsModule)
+],
 });
