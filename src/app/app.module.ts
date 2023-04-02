@@ -13,17 +13,31 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { OnpushComponent } from './onpush/onpush.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { HomeComponent } from './home/home.component';
+import { SubjectObservableComponent } from './subject-observable/subject-observable.component';
+import { RxjsOperatorsComponent } from './rxjs-operators/rxjs-operators.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNavigationComponent,
+    OnpushComponent,
+    NewsletterComponent,
+    HomeComponent,
+    SubjectObservableComponent,
+    RxjsOperatorsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BannerComponent,
     BrowserAnimationsModule,
+    CommonModule,
+    HttpClientModule,
     // LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -34,10 +48,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

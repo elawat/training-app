@@ -88,7 +88,7 @@ $app-theme: mat.define-light-theme(
 @include mat.toolbar-theme($app-theme);
 @include mat.button-theme($app-theme);
 
-// @include mat.all-component-themes($app-theme);
+@include mat.all-component-themes($app-theme);
 
 .dark-theme {
   $app-dark-primary: mat.define-palette(mat.$indigo-palette, 500);
@@ -103,5 +103,5 @@ $app-theme: mat.define-light-theme(
     )
   );
 
-  // @include mat.all-component-themes($app-dark-theme);
+  @include mat.all-component-themes($app-dark-theme);
 }

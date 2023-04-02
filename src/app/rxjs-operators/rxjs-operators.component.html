@@ -1,0 +1,56 @@
+<div class="content">
+  <button mat-raised-button (click)="request()">Request</button>
+  <hr>
+
+  <h5>concatination</h5>
+  <p class="concat" *ngIf="concatResult$ | async as result">Concat result: <strong>{{result}}</strong>
+  </p>
+  <ul>
+    <!-- <li *ngFor="let response of requestedBooks$ | async">
+      {{response.requestId}}, {{response.bookTitle}}
+    </li> -->
+  </ul>
+
+  <hr>
+  <h5>merging</h5>
+  <p class="concat" *ngIf="mergeResult$ | async as result">Merge result: <strong>{{result}}</strong>
+  <ul>
+    <!-- <li *ngFor="let response of requestedByMergeBooks$ | async">
+      {{response.requestId}}, {{response.bookTitle}}
+    </li> -->
+  </ul>
+
+
+  <hr>
+  <h5>switching</h5>
+  <ul>
+    <!-- <li *ngFor="let response of requestedBySwitchBooks$ | async">
+      {{response.requestId}}, {{response.bookTitle}}
+    </li> -->
+  </ul>
+
+  <hr>
+  <h5>exhaust</h5>
+  <ul>
+    <li *ngFor="let response of requestedByExhaustBooks$ | async">
+      {{response.requestId}}, {{response.bookTitle}}
+    </li>
+  </ul>
+
+
+  <hr>
+  <h5>combine operators</h5>
+  <p *ngIf="combineLatest$ | async as val">combine latest {{val}}</p>
+  <p *ngIf="forkJoin$ | async as val">fork join {{val}}</p>
+  <p *ngIf="race$ | async as val">race {{val | json}}</p>
+  <p *ngIf="withLatestFrom$ | async as val">withLatestFrom {{val}}</p>
+
+  <hr>
+  <h5>transformation</h5>
+  <p>scan: {{scan$ | async}}</p>
+  <p>scan: {{toArray$ | async}}</p>
+
+  <div>
+    Total mousedown time: <span id="duration">{{durationCount}}s</span>
+  </div>
+</div>
